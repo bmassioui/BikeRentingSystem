@@ -19,13 +19,13 @@ Follow these steps to set up and run the Bike Renting System:
 1. Clone this repository to your local machine:
 
    ```bash
-   git clone https://github.com/bmassioui/BikeRentalSystem.git
+   git clone https://github.com/bmassioui/BikeRentingSystem.git
    ```
 
 2. Navigate to the cloned repository:
 
    ```bash
-   cd BikeRentalSystem
+   cd BikeRentingSystem
    ```
 
 ### Server
