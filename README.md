@@ -5,6 +5,67 @@ This repository contains a Bike Renting System built using .NET 7, Blazor WebAss
 * The Client project: Provides the user interface using Blazor WASM.
 * The Shared project: Contains shared code and models.
 
+## Class diagram
+Explaining the bike renting system using UML class diagram as following:
+
+```mermaid
+classDiagram
+  class Bike {
+    + SerialNumber: string
+    + Title: string
+    + ShortDescription: string
+    + FullDescription: string
+    + Price: decimal
+    + IsAvailable: bool
+    + Type: BikeType
+  }
+
+  class Customer {
+    + Id: int
+    + FirstName: string
+    + LastName: string
+    + Email: string
+    + Address: Address
+    + Phone: PhoneNumber
+  }
+
+  class BikeRental {
+    + CustomerId: int
+    + SerialNumber: string
+    + RentDate: DateTime
+    + DateStart: DateTime
+    + DateEnd: DateTime
+    + Total: decimal
+  }
+
+  class Address {
+    + District: string
+    + Street: string
+    + HouseNumber: int
+    + ZipCode: string
+  }
+
+  class PhoneNumber {
+    + InternationalPrefix: string
+    + CountryCode: int
+    + NationalPrefix: int
+    + LocalNumber: int
+  }
+
+  class BikeType{
+    <<enumeration>>
+    ROAD
+    ELECTRIC
+    MOUNTAIN
+  }
+
+  Bike --|> BikeType : Is
+  Customer --> Address : Lives at
+  Customer --> PhoneNumber : Owns
+  BikeRental "1..*" --> "1" Bike : Contains
+  BikeRental "1..*" --> "1" Customer : Rents
+```
+
 ## Prerequisites
 
 Before you begin, make sure you have the following tools installed:
