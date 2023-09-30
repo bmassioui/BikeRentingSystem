@@ -11,7 +11,7 @@ Explaining the bike renting system using UML class diagram as following:
 ```mermaid
 classDiagram
   class Bike {
-    + SerialNumber: string
+    + Id: guid
     + Title: string
     + ShortDescription: string
     + FullDescription: string
@@ -31,13 +31,19 @@ classDiagram
     + Phone: PhoneNumber
   }
 
-  class BikeRental {
+  class RentOrder {
+    + Id: int 
     + CustomerId: int
-    + SerialNumber: string
-    + RentDate: DateTime
+    + OrderDate: Date
     + DateStart: DateTime
     + DateEnd: DateTime
     + Total: decimal
+  }
+
+  class LineItem {
+    + Id: int
+    + BikeId: guid
+    + Quantity: int
   }
 
   class Address {
@@ -62,10 +68,11 @@ classDiagram
   }
 
   Bike --|> BikeType : Is
-  Customer --> Address : Lives at
-  Customer --> PhoneNumber : Owns
-  BikeRental "1..*" --> "1" Bike : Contains
-  BikeRental "1..*" --> "1" Customer : Rents
+  Customer -- Address : Lives at
+  Customer -- PhoneNumber : Owns
+  Customer "1" --> "1..*" RentOrder : Orders
+  RentOrder "1" --> "1..*" LineItem : Consists of
+  LineItem "1..*" -- "1" Bike : Has
 ```
 
 ## Prerequisites

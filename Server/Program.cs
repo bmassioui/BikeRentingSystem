@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.ResponseCompression;
+using BikeRentalSystem.Server;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -6,6 +6,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
+
+builder.Services.AddBikeRentalSystemServerServices();
 
 var app = builder.Build();
 
@@ -27,7 +29,6 @@ app.UseBlazorFrameworkFiles();
 app.UseStaticFiles();
 
 app.UseRouting();
-
 
 app.MapRazorPages();
 app.MapControllers();
