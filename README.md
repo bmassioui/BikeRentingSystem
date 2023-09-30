@@ -18,6 +18,8 @@ classDiagram
     + Price: decimal
     + IsAvailable: bool
     + Type: BikeType
+    + ThumbnailImageUrl: string
+    + ImageUrl: string
   }
 
   class Customer {

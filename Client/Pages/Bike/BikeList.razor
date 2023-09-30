@@ -1,0 +1,241 @@
+﻿@page "/bikes/list"
+
+<PageTitle>Bike list</PageTitle>
+
+@* Filter *@
+<div class="container-fluid bg-white p-4 mt-2 rounded">
+    <form class="row g-3">
+        <div class="col-md-3">
+            <label for="inputForBikeName" class="form-label">Bike name</label>
+            <input type="text" class="form-control" id="inputForBikeName">
+        </div>
+        <div class="col-md-3">
+            <label for="inputState" class="form-label">State</label>
+            <select id="inputState" class="form-select">
+                <option selected>Choose...</option>
+                <option>...</option>
+            </select>
+        </div>
+        <div class="col-md-3">
+            <label for="inputForFromDate" class="form-label">From</label>
+            <input type="date" class="form-control" id="inputForFromDate">
+        </div>
+        <div class="col-md-3">
+            <label for="inputForToDate" class="form-label">To</label>
+            <input type="date" class="form-control" id="inputForToDate">
+        </div>
+        <div class="col-md-12">
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="gridCheck" checked>
+                <label class="form-check-label" for="gridCheck">
+                    Only available bikes
+                </label>
+            </div>
+        </div>
+        <div class="col-md-12 text-end">
+            <i class="fas-solid fas-magnifying-glass"></i>
+            <button type="submit" class="btn btn-primary">
+                <i class="fa-solid fa-filter"></i> | Filter
+            </button>
+        </div>
+    </form>
+</div>
+@* Filter *@
+
+@* Sort *@
+<div class="container-fluid bg-white p-2 mt-2 rounded">
+    <div class="row justify-content-end">
+        <div class="col-md-3">
+            <div class="input-group">
+                <select class="form-select" aria-label="Sort bike list by a criteria">
+                    <option selected value="recent">Recent</option>
+                    <option value="Lowest price">Lowest price</option>
+                    <option value="Expensive">Highest price</option>
+                    <option value="Most available">Most available</option>
+                </select>
+                <button class="btn btn-outline-secondary" type="button">
+                    <i class="fa-solid fa-arrow-down-wide-short"></i> Sort
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+@* Sort *@
+
+@* Bike list *@
+<div class="container-fluid bg-white p-4 mt-2 rounded shadow-sm" style="max-height: 400px">
+    <div class="row g-0">
+        <div class="col-md-2">
+            <img src="https://surlybikes.com/uploads/bikes/_medium_image/Lowside_BK0534_Background-2000x1333.jpg" class="img-fluid rounded w-100 object-fit-cover" style="height: 350px;" alt="Bike thumbnail">
+        </div>
+        <div class="col-md-10">
+            <div class="card-header bg-transparent">
+                <h5 class="card-title fw-bold">Road Bike</h5>
+                <p class="card-text h4 text-info">15.92$ /day</p>
+            </div>
+            <div class="card-body">
+                <p class="card-text">Sleek and speedy road bike built for performance. Carbon fiber frame, aerodynamic design, and precision components.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                <p class="card-text">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star-half-stroke"></i>
+                </p>
+                <p class="card-text">
+                    <span class="badge rounded-pill bg-success p-2">
+                        27 item(s) in stock
+                    </span>
+                </p>
+            </div>
+            <div class="card-footer bg-transparent text-end">
+                <button type="button" class="btn btn-info rounded-circle btn-lg" title="More details">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid bg-white p-4 mt-2 rounded shadow-sm" style="max-height: 400px">
+    <div class="row g-0">
+        <div class="col-md-2">
+            <img src="https://images.offerup.com/F9cQuEMxLjTTsD-6RHh9qxrUwuk=/1442x1442/0047/004721f6231348ef94bccf1284934e9c.jpg" class="img-fluid rounded w-100 object-fit-cover" style="height: 350px;" alt="Aventon Mataro thumbnail">
+        </div>
+        <div class="col-md-10">
+            <div class="card-header bg-transparent">
+                <h5 class="card-title fw-bold">Aventon Mataro Electric Bike</h5>
+                <p class="card-text h4 text-info">45.00$ /day</p>
+            </div>
+            <div class="card-body">
+                <p class="card-text">The Aventon Mataro Electric Bike combines the sleek and stylish design of the Mataro with the convenience and power of electric assistance.</p>
+                <p class="card-text"><small class="text-muted">Last updated 1 hour ago</small></p>
+                <p class="card-text">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star-half-stroke"></i>
+                </p>
+                <p class="card-text">
+                    <span class="badge rounded-pill bg-success p-2">
+                        11 item(s) in stock
+                    </span>
+                </p>
+            </div>
+            <div class="card-footer bg-transparent text-end">
+                <button type="button" class="btn btn-info rounded-circle btn-lg" title="More details">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid bg-white p-4 mt-2 rounded shadow-sm" style="max-height: 400px">
+    <div class="row g-0">
+        <div class="col-md-2">
+            <img src="https://images.squarespace-cdn.com/content/v1/57d61144e58c62ac0e3179cf/0545ec9c-1eca-4b4d-bf1d-5763a2eea4c8/Propella-blue-orange+background.jpeg" class="img-fluid rounded w-100 object-fit-cover" style="height: 350px;" alt="Electric bike thumbnail">
+        </div>
+        <div class="col-md-10">
+            <div class="card-header bg-transparent">
+                <h5 class="card-title fw-bold">Electric bike</h5>
+                <p class="card-text h4 text-info">30.22$ /day</p>
+            </div>
+            <div class="card-body">
+                <p class="card-text">Eco-friendly and high-performance electric bikes offer you the perfect blend of pedal power and electric assistance, making your journeys smooth, efficient, and enjoyable.</p>
+                <p class="card-text"><small class="text-muted">Last updated 15 mins ago</small></p>
+                <p class="card-text">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star-half-stroke"></i>
+                </p>
+                <p class="card-text">
+                    <span class="badge rounded-pill bg-warning p-2">
+                        2 item(s) in stock
+                    </span>
+                </p>
+            </div>
+            <div class="card-footer bg-transparent text-end">
+                <button type="button" class="btn btn-info rounded-circle btn-lg" title="More details">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid bg-white p-4 mt-2 rounded shadow-sm" style="max-height: 400px">
+    <div class="row g-0">
+        <div class="col-md-2">
+            <img src="https://twin-shop.be/43979-home_default/radio-legion-26-2021-cosmic-splatter.jpg" class="img-fluid rounded w-100 object-fit-cover" style="height: 350px;" alt="Radio Legion thumbnail">
+        </div>
+        <div class="col-md-10">
+            <div class="card-header bg-transparent">
+                <h5 class="card-title fw-bold">Radio Legion</h5>
+                <p class="card-text h4 text-info">23.11$ /day</p>
+            </div>
+            <div class="card-body">
+                <p class="card-text">The Radio Legion 26 is a versatile electric bike designed for all-terrain adventures. With its rugged build and powerful electric motor.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                <p class="card-text">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star-half-stroke"></i>
+                </p>
+                <p class="card-text">
+                    <span class="badge rounded-pill bg-danger p-2">
+                        Unavailable
+                    </span>
+                </p>
+            </div>
+            <div class="card-footer bg-transparent text-end">
+                <button type="button" class="btn btn-info rounded-circle btn-lg" title="More details">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+@* Bike list *@
+
+@* Pagination *@
+<div class="container-fluid bg-white p-2 mt-2 rounded">
+    <div class="row justify-content-center">
+        <div class="col-md-3 pt-3 d-flex align-items-center justify-content-center">
+            <nav aria-label="Bike list navigation">
+                <ul class="pagination">
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="First">
+                            <i class="fa-solid fa-backward-step"></i>
+                        </a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous">
+                            <i class="fa-solid fa-caret-left"></i>
+                        </a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous">
+                            <i class="fa-solid fa-caret-right"></i>
+                        </a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Last">
+                            <i class="fa-solid fa-forward-step"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+@* Pagination *@
