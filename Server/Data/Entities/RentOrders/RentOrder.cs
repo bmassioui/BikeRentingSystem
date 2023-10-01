@@ -14,4 +14,6 @@ public class RentOrder : BaseEntity<RentOrderId>
 
     public CustomerId CustomerId { get; set; }
     public virtual Customer Customer { get; set; } = default!;
+
+    public virtual ICollection<LineItem> LineItems { get; set; } = Enumerable.Empty<LineItem>().ToList();
 }

@@ -1,4 +1,5 @@
-﻿using BikeRentalSystem.Shared.Enumerations;
+﻿using BikeRentalSystem.Server.Data.Entities.RentOrders;
+using BikeRentalSystem.Shared.Enumerations;
 
 namespace BikeRentalSystem.Server.Data.Entities.Bikes;
 
@@ -19,4 +20,6 @@ public class Bike : BaseEntity<BikeId>
     public string? ThumbnailImageUrl { get; set; }
 
     public string? ImageUrl { get; set; }
+
+    public virtual ICollection<LineItem> LineItems { get; set; } = Enumerable.Empty<LineItem>().ToList();
 }

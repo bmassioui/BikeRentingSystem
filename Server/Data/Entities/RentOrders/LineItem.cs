@@ -8,4 +8,7 @@ public class LineItem : BaseEntity<LineItemId>
 
     public BikeId BikeId { get; set; }
     public virtual Bike Bike { get; set; } = default!;
+
+    public RentOrderId RentOrderId { get; set; }
+    public virtual RentOrder RentOrder { get; set; } = default!;
 }

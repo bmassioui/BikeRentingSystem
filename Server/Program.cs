@@ -1,4 +1,5 @@
 using BikeRentalSystem.Server;
+using BikeRentalSystem.Server.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,7 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
 
-builder.Services.AddBikeRentalSystemServerServices();
+builder.Services.AddBikeRentalSystemServerServices(builder.Configuration);
 
 var app = builder.Build();
 
@@ -15,6 +16,8 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseWebAssemblyDebugging();
+
+    app.Services.ApplyMigrations();
 }
 else
 {
