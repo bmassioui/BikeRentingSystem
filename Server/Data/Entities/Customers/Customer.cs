@@ -3,8 +3,10 @@ using BikeRentalSystem.Server.Data.ValueObjects;
 
 namespace BikeRentalSystem.Server.Data.Entities.Customers;
 
-public class Customer : BaseEntity<CustomerId>
+public class Customer : BaseAuditableEntity, IIdentifiableEntity<CustomerId>
 {
+    public CustomerId Id { get; set; } = default!;
+
     public string FirstName { get; set; } = default!;
 
     public string LastName { get; set; } = default!;

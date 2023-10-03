@@ -7,23 +7,23 @@ using System.Reflection;
 
 namespace BikeRentalSystem.Server.Data;
 
-public class BikeRentalSystemDbContext : DbContext
+public class BikeRentalSystemDbContext : DbContext, IApplicationDbContext
 {
     public BikeRentalSystemDbContext(DbContextOptions<BikeRentalSystemDbContext> dbContextOptions) : base(dbContextOptions)
-    {
-    }
+    { }
 
-    public DbSet<Bike> Bikes { get; set; }
+    public DbSet<Bike> Bikes => Set<Bike>();
 
-    public DbSet<Customer> Customers { get; set; }
+    public DbSet<Customer> Customers => Set<Customer>();
 
-    public DbSet<RentOrder> RentOrders { get; set; }
+    public DbSet<RentOrder> RentOrders => Set<RentOrder>();
 
-    public DbSet<LineItem> LineItems { get; set; }
+    public DbSet<LineItem> LineItems => Set<LineItem>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        // The order doesn't matter : https://learn.microsoft.com/en-us/ef/core/modeling/#applying-all-configurations-in-an-assembly
+        base.OnModelCreating(modelBuilder);
+
         modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
     }
 

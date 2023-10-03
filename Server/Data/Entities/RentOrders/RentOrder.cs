@@ -2,8 +2,10 @@
 
 namespace BikeRentalSystem.Server.Data.Entities.RentOrders;
 
-public class RentOrder : BaseEntity<RentOrderId>
+public class RentOrder : BaseAuditableEntity, IIdentifiableEntity<RentOrderId>
 {
+    public RentOrderId Id { get; set; } = default!;
+
     public DateOnly RentDate { get; set; }
 
     public DateTime DateStart { get; set; }

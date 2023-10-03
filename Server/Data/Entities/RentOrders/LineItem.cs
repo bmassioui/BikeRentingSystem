@@ -2,8 +2,10 @@
 
 namespace BikeRentalSystem.Server.Data.Entities.RentOrders;
 
-public class LineItem : BaseEntity<LineItemId>
+public class LineItem : BaseAuditableEntity, IIdentifiableEntity<LineItemId>
 {
+    public LineItemId Id { get; set; }
+
     public uint Quantity { get; set; }
 
     public BikeId BikeId { get; set; }

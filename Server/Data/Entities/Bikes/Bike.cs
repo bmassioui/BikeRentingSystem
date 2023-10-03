@@ -3,8 +3,10 @@ using BikeRentalSystem.Shared.Enumerations;
 
 namespace BikeRentalSystem.Server.Data.Entities.Bikes;
 
-public class Bike : BaseEntity<BikeId>
+public class Bike : BaseAuditableEntity, IIdentifiableEntity<BikeId>
 {
+    public BikeId Id { get; set; } = default!;
+
     public string Title { get; set; } = default!;
 
     public string ShortDescription { get; set; } = default!;
