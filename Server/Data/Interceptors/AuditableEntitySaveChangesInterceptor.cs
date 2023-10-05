@@ -15,7 +15,6 @@ public class AuditableEntitySaveChangesInterceptor : SaveChangesInterceptor
     public override InterceptionResult<int> SavingChanges(DbContextEventData eventData, InterceptionResult<int> result)
     {
         UpdateEntities(eventData.Context);
-
         return base.SavingChanges(eventData, result);
     }
 
@@ -43,7 +42,7 @@ public class AuditableEntitySaveChangesInterceptor : SaveChangesInterceptor
                 entry.Entity.CreatedAt = _dateTime.Now;
             }
 
-            if (entry.State == EntityState.Added || entry.State == EntityState.Modified || entry.HasChangedOwnedEntities())
+            if (entry.State == EntityState.Modified || entry.State == EntityState.Deleted || entry.HasChangedOwnedEntities())
             {
                 entry.Entity.ModifiedBy = 0;
                 entry.Entity.ModifiedAt = _dateTime.Now;
