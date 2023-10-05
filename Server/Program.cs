@@ -16,6 +16,12 @@ if (app.Environment.IsDevelopment())
 {
     app.UseWebAssemblyDebugging();
 
+    app.UseSwagger();
+    app.UseSwaggerUI(options =>
+    {
+        options.SwaggerEndpoint("/swagger/v1/swagger.json", "Bike renting system API V1");
+    });
+
     await app.Services.ApplyMigrationsAsync();
 
     await app.InitializeDatabaseAsync();

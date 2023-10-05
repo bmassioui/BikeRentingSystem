@@ -1,5 +1,4 @@
 ﻿using BikeRentalSystem.Server.Data.Entities;
-using BikeRentalSystem.Server.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore.Diagnostics;
@@ -8,10 +7,6 @@ namespace BikeRentalSystem.Server.Data.Interceptors;
 
 public class AuditableEntitySaveChangesInterceptor : SaveChangesInterceptor
 {
-    private readonly IDateTime _dateTime;
-
-    public AuditableEntitySaveChangesInterceptor(IDateTime dateTime) => _dateTime = dateTime;
-
     public override InterceptionResult<int> SavingChanges(DbContextEventData eventData, InterceptionResult<int> result)
     {
         UpdateEntities(eventData.Context);
@@ -39,13 +34,13 @@ public class AuditableEntitySaveChangesInterceptor : SaveChangesInterceptor
             if (entry.State == EntityState.Added)
             {
                 entry.Entity.CreatedBy = 0;
-                entry.Entity.CreatedAt = _dateTime.Now;
+                entry.Entity.CreatedAt = DateTime.Now;
             }
 
             if (entry.State == EntityState.Modified || entry.State == EntityState.Deleted || entry.HasChangedOwnedEntities())
             {
                 entry.Entity.ModifiedBy = 0;
-                entry.Entity.ModifiedAt = _dateTime.Now;
+                entry.Entity.ModifiedAt = DateTime.Now;
             }
         }
     }

@@ -23,9 +23,9 @@ public static class InitializerExtensions
 public class ApplicationDbContextInitializer
 {
     private readonly ILogger<ApplicationDbContextInitializer> _logger;
-    private readonly BikeRentalSystemDbContext _dbContext;
+    private readonly IApplicationDbContext _dbContext;
 
-    public ApplicationDbContextInitializer(ILogger<ApplicationDbContextInitializer> logger, BikeRentalSystemDbContext dbContext)
+    public ApplicationDbContextInitializer(ILogger<ApplicationDbContextInitializer> logger, IApplicationDbContext dbContext)
         => (_logger, _dbContext) = (logger, dbContext);
 
     internal async Task InitializeAsync(CancellationToken cancellationToken = default)
