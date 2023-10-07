@@ -1,9 +1,9 @@
-﻿using BikeRentalSystem.Server.Data.Entities.Bikes;
+﻿using BikeRentalSystem.Shared.Bike;
 
 namespace BikeRentalSystem.Server.Features.Bikes.Services
 {
     public interface IBikeService
     {
-        Task<IReadOnlyList<Bike>> GetBikeListAsync(CancellationToken cancellationToken = default);
+        Task<IReadOnlyList<BikeDto>> GetBikeListAsync(CancellationToken cancellationToken = default);
     }
 }

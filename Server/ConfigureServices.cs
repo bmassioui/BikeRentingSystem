@@ -50,7 +50,8 @@ public static class ConfigureServices
     {
         services.AddSwaggerGen(options =>
         {
-            options.SwaggerDoc("v1", new OpenApiInfo { 
+            options.SwaggerDoc("v1", new OpenApiInfo
+            {
                 Title = "Bike renting system API.",
                 Description = "Bike Renting System API: Streamline your bike rental business with our powerful API. Manage bookings, track inventory, and offer a seamless rental experience to your customers.",
                 Version = "v1",

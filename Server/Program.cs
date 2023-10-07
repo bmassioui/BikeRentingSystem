@@ -20,6 +20,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI(options =>
     {
         options.SwaggerEndpoint("/swagger/v1/swagger.json", "Bike renting system API V1");
+
+        // Use custom style
+        options.InjectStylesheet("/swagger-ui/custom.css");
     });
 
     await app.Services.ApplyMigrationsAsync();
@@ -34,9 +37,9 @@ else
 }
 
 app.UseHttpsRedirection();
+app.UseStaticFiles();
 
 app.UseBlazorFrameworkFiles();
-app.UseStaticFiles();
 
 app.UseRouting();
 

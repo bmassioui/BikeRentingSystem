@@ -1,5 +1,5 @@
-﻿using BikeRentalSystem.Server.Data.Entities.Bikes;
-using BikeRentalSystem.Server.Features.Bikes.Services;
+﻿using BikeRentalSystem.Server.Features.Bikes.Services;
+using BikeRentalSystem.Shared.Bike;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BikeRentalSystem.Server.Controllers;
@@ -20,7 +20,7 @@ public class BikesController : ApiControllerBase
     /// <response code="200">Returns list of bike</response>
     [HttpGet]
     [ProducesResponseType(200)]
-    public async Task<ActionResult<IEnumerable<Bike>>> GetBikeList(CancellationToken cancellationToken = default)
+    public async Task<ActionResult<IEnumerable<BikeDto>>> GetBikeList(CancellationToken cancellationToken = default)
     {
         return Ok(await _bikeService.GetBikeListAsync(cancellationToken));
     }
