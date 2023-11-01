@@ -7,8 +7,8 @@ trigger:
 - master
 
 pool:
-  vmImage: 'windows-latest'
-
+  name: CICD_SONARQUBE_AGENT_POOL
+  
 variables:
   solution: '**/*.sln'
   buildPlatform: 'Any CPU'
