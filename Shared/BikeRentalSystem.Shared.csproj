@@ -9,4 +9,12 @@
   <ItemGroup>
     <SupportedPlatform Include="browser" />
   </ItemGroup>
+
+  <ItemGroup>
+    <EditorConfigFiles Remove="C:\Users\bouch\OneDrive\Desktop\Workspace\BikeRentingSystem\Shared\.editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="C:\Users\bouch\OneDrive\Desktop\Workspace\BikeRentingSystem\Shared\.editorconfig" />
+  </ItemGroup>
 </Project>

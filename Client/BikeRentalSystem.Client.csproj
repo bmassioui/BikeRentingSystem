@@ -16,4 +16,12 @@
     <ProjectReference Include="..\Shared\BikeRentalSystem.Shared.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <EditorConfigFiles Remove="C:\Users\bouch\OneDrive\Desktop\Workspace\BikeRentingSystem\Client\.editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="C:\Users\bouch\OneDrive\Desktop\Workspace\BikeRentingSystem\Client\.editorconfig" />
+  </ItemGroup>
+
 </Project>

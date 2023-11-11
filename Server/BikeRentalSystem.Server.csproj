@@ -32,5 +32,13 @@
     <Folder Include="Data\Migrations\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <EditorConfigFiles Remove="C:\Users\bouch\OneDrive\Desktop\Workspace\BikeRentingSystem\Server\.editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="C:\Users\bouch\OneDrive\Desktop\Workspace\BikeRentingSystem\Server\.editorconfig" />
+  </ItemGroup>
+
 
 </Project>
